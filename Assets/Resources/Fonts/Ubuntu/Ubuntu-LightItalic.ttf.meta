@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: e99a18093219bf64fa9153b0779c685b
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Ubuntu Light
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 92cae0379330e8742bb505e43a2e9d29, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
