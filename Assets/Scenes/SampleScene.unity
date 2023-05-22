@@ -911,6 +911,7 @@ GameObject:
   - component: {fileID: 228856733}
   - component: {fileID: 228856732}
   - component: {fileID: 228856734}
+  - component: {fileID: 228856735}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -1013,6 +1014,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &228856735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228856730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc63f8e82cb63749b617bdbeef84c3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ellipseImage: {fileID: 228856732}
+  _ellipseColor: {r: 0.9098039, g: 1, b: 0.8745098, a: 1}
+  _costIndicatorImage: {fileID: 492867628}
+  _costIndicatorText: {fileID: 1254545534}
 --- !u!1 &231408149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,6 +1042,7 @@ GameObject:
   - component: {fileID: 231408152}
   - component: {fileID: 231408151}
   - component: {fileID: 231408153}
+  - component: {fileID: 231408154}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -1127,6 +1145,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &231408154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231408149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc63f8e82cb63749b617bdbeef84c3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ellipseImage: {fileID: 231408151}
+  _ellipseColor: {r: 0.9098039, g: 1, b: 0.8745098, a: 1}
+  _costIndicatorImage: {fileID: 722101154}
+  _costIndicatorText: {fileID: 1145305063}
 --- !u!1 &235707185
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,6 +1173,7 @@ GameObject:
   - component: {fileID: 235707188}
   - component: {fileID: 235707187}
   - component: {fileID: 235707189}
+  - component: {fileID: 235707190}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -1241,6 +1276,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &235707190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235707185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc63f8e82cb63749b617bdbeef84c3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ellipseImage: {fileID: 235707187}
+  _ellipseColor: {r: 0.9098039, g: 1, b: 0.8745098, a: 1}
+  _costIndicatorImage: {fileID: 1343245993}
+  _costIndicatorText: {fileID: 840505416}
 --- !u!1 &294344007
 GameObject:
   m_ObjectHideFlags: 0
@@ -3133,6 +3184,7 @@ GameObject:
   - component: {fileID: 586898200}
   - component: {fileID: 586898199}
   - component: {fileID: 586898201}
+  - component: {fileID: 586898202}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -3235,6 +3287,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &586898202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586898197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc63f8e82cb63749b617bdbeef84c3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ellipseImage: {fileID: 586898199}
+  _ellipseColor: {r: 0.9098039, g: 1, b: 0.8745098, a: 1}
+  _costIndicatorImage: {fileID: 528332281}
+  _costIndicatorText: {fileID: 661873195}
 --- !u!1 &597460797
 GameObject:
   m_ObjectHideFlags: 0
@@ -3850,6 +3918,7 @@ GameObject:
   - component: {fileID: 750410106}
   - component: {fileID: 750410105}
   - component: {fileID: 750410107}
+  - component: {fileID: 750410108}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -3952,6 +4021,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &750410108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750410103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc63f8e82cb63749b617bdbeef84c3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ellipseImage: {fileID: 750410105}
+  _ellipseColor: {r: 0.9098039, g: 1, b: 0.8745098, a: 1}
+  _costIndicatorImage: {fileID: 1947519291}
+  _costIndicatorText: {fileID: 108312664}
 --- !u!1 &755180137
 GameObject:
   m_ObjectHideFlags: 0
@@ -5025,6 +5110,7 @@ GameObject:
   - component: {fileID: 993614181}
   - component: {fileID: 993614180}
   - component: {fileID: 993614182}
+  - component: {fileID: 993614183}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -5127,6 +5213,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &993614183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993614178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc63f8e82cb63749b617bdbeef84c3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ellipseImage: {fileID: 993614180}
+  _ellipseColor: {r: 0.9098039, g: 1, b: 0.8745098, a: 1}
+  _costIndicatorImage: {fileID: 384925645}
+  _costIndicatorText: {fileID: 982103453}
 --- !u!1 &994897274
 GameObject:
   m_ObjectHideFlags: 0
@@ -5573,6 +5675,7 @@ GameObject:
   - component: {fileID: 1243054508}
   - component: {fileID: 1243054507}
   - component: {fileID: 1243054509}
+  - component: {fileID: 1243054510}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -5675,6 +5778,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1243054510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243054505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc63f8e82cb63749b617bdbeef84c3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ellipseImage: {fileID: 1243054507}
+  _ellipseColor: {r: 0.9098039, g: 1, b: 0.8745098, a: 1}
+  _costIndicatorImage: {fileID: 755180139}
+  _costIndicatorText: {fileID: 152870931}
 --- !u!1 &1254545532
 GameObject:
   m_ObjectHideFlags: 0
@@ -7117,6 +7236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1739367071}
+  - component: {fileID: 1739367072}
   m_Layer: 5
   m_Name: Cost Indicator
   m_TagString: Untagged
@@ -7146,6 +7266,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1739367072
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739367070}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1756246010
 GameObject:
   m_ObjectHideFlags: 0
@@ -7487,6 +7619,7 @@ GameObject:
   - component: {fileID: 1874574487}
   - component: {fileID: 1874574486}
   - component: {fileID: 1874574488}
+  - component: {fileID: 1874574489}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -7589,6 +7722,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1874574489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874574484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc63f8e82cb63749b617bdbeef84c3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ellipseImage: {fileID: 1874574486}
+  _ellipseColor: {r: 0.9098039, g: 1, b: 0.8745098, a: 1}
+  _costIndicatorImage: {fileID: 1842462747}
+  _costIndicatorText: {fileID: 843646564}
 --- !u!1 &1881581113
 GameObject:
   m_ObjectHideFlags: 0
@@ -7804,6 +7953,7 @@ GameObject:
   - component: {fileID: 1892572023}
   - component: {fileID: 1892572022}
   - component: {fileID: 1892572024}
+  - component: {fileID: 1892572025}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -7906,6 +8056,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1892572025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892572020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc63f8e82cb63749b617bdbeef84c3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ellipseImage: {fileID: 1892572022}
+  _ellipseColor: {r: 0.9098039, g: 1, b: 0.8745098, a: 1}
+  _costIndicatorImage: {fileID: 1924713509}
+  _costIndicatorText: {fileID: 1445156028}
 --- !u!1 &1903956453
 GameObject:
   m_ObjectHideFlags: 0
@@ -8488,6 +8654,7 @@ GameObject:
   - component: {fileID: 2081874924}
   - component: {fileID: 2081874923}
   - component: {fileID: 2081874925}
+  - component: {fileID: 2081874926}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -8590,6 +8757,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2081874926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081874921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc63f8e82cb63749b617bdbeef84c3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ellipseImage: {fileID: 2081874923}
+  _ellipseColor: {r: 0.9098039, g: 1, b: 0.8745098, a: 1}
+  _costIndicatorImage: {fileID: 1513694018}
+  _costIndicatorText: {fileID: 1882625855}
 --- !u!1 &2085437815
 GameObject:
   m_ObjectHideFlags: 0
@@ -8714,12 +8897,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2085437815}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e69acbe825cb0a46844f8b6211cf9b1, type: 3}
+  m_Script: {fileID: 11500000, guid: cbc63f8e82cb63749b617bdbeef84c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _item: {fileID: 1739367071}
-  _endValue: 5
-  _cycleLength: 5
+  _ellipseImage: {fileID: 2085437817}
+  _ellipseColor: {r: 0.9105781, g: 1, b: 0.8726415, a: 1}
+  _costIndicatorImage: {fileID: 987889156}
+  _costIndicatorText: {fileID: 673511399}
 --- !u!1 &2107119521
 GameObject:
   m_ObjectHideFlags: 0
