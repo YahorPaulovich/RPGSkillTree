@@ -913,6 +913,7 @@ GameObject:
   - component: {fileID: 228856734}
   - component: {fileID: 228856735}
   - component: {fileID: 228856736}
+  - component: {fileID: 228856737}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -1046,6 +1047,23 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &228856737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228856730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdea8aa7651c2b44a8c9a35d02fb7bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToBob: {fileID: 180010917}
+  _amplitudeX: 0.5
+  _frequencyX: 0.5
+  _amplitudeY: 0.5
+  _frequencyY: 0.5
 --- !u!1 &231408149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,6 +1078,7 @@ GameObject:
   - component: {fileID: 231408153}
   - component: {fileID: 231408154}
   - component: {fileID: 231408155}
+  - component: {fileID: 231408156}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -1193,6 +1212,23 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &231408156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231408149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdea8aa7651c2b44a8c9a35d02fb7bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToBob: {fileID: 1608429428}
+  _amplitudeX: 0.5
+  _frequencyX: 0.5
+  _amplitudeY: 0.5
+  _frequencyY: 0.5
 --- !u!1 &235707185
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,6 +1243,7 @@ GameObject:
   - component: {fileID: 235707189}
   - component: {fileID: 235707190}
   - component: {fileID: 235707191}
+  - component: {fileID: 235707192}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -1340,6 +1377,23 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &235707192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235707185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdea8aa7651c2b44a8c9a35d02fb7bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToBob: {fileID: 1127079152}
+  _amplitudeX: 0.8
+  _frequencyX: 0.5
+  _amplitudeY: 0.2
+  _frequencyY: 0.5
 --- !u!1 &294344007
 GameObject:
   m_ObjectHideFlags: 0
@@ -3276,6 +3330,7 @@ GameObject:
   - component: {fileID: 586898201}
   - component: {fileID: 586898202}
   - component: {fileID: 586898203}
+  - component: {fileID: 586898204}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -3409,6 +3464,23 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &586898204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586898197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdea8aa7651c2b44a8c9a35d02fb7bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToBob: {fileID: 1135972967}
+  _amplitudeX: 0.8
+  _frequencyX: 0.5
+  _amplitudeY: 0.5
+  _frequencyY: 0.4
 --- !u!1 &597460797
 GameObject:
   m_ObjectHideFlags: 0
@@ -4026,6 +4098,7 @@ GameObject:
   - component: {fileID: 750410107}
   - component: {fileID: 750410108}
   - component: {fileID: 750410109}
+  - component: {fileID: 750410110}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -4159,6 +4232,23 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &750410110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750410103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdea8aa7651c2b44a8c9a35d02fb7bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToBob: {fileID: 30715248}
+  _amplitudeX: 0.2
+  _frequencyX: 0.5
+  _amplitudeY: 0.6
+  _frequencyY: 0.7
 --- !u!1 &755180137
 GameObject:
   m_ObjectHideFlags: 0
@@ -5617,7 +5707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 8d66e65c66e29504199ed664979682cd, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5908,6 +5998,7 @@ GameObject:
   - component: {fileID: 1243054509}
   - component: {fileID: 1243054510}
   - component: {fileID: 1243054511}
+  - component: {fileID: 1243054512}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -6041,6 +6132,23 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &1243054512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243054505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdea8aa7651c2b44a8c9a35d02fb7bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToBob: {fileID: 1441812526}
+  _amplitudeX: 0.5
+  _frequencyX: 0.5
+  _amplitudeY: 0.5
+  _frequencyY: 0.5
 --- !u!1 &1254545532
 GameObject:
   m_ObjectHideFlags: 0
@@ -7884,6 +7992,7 @@ GameObject:
   - component: {fileID: 1874574488}
   - component: {fileID: 1874574489}
   - component: {fileID: 1874574490}
+  - component: {fileID: 1874574491}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -8017,6 +8126,23 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &1874574491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874574484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdea8aa7651c2b44a8c9a35d02fb7bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToBob: {fileID: 889779010}
+  _amplitudeX: 0.5
+  _frequencyX: 0.5
+  _amplitudeY: 0.5
+  _frequencyY: 0.5
 --- !u!1 &1881581113
 GameObject:
   m_ObjectHideFlags: 0
@@ -8234,6 +8360,7 @@ GameObject:
   - component: {fileID: 1892572024}
   - component: {fileID: 1892572025}
   - component: {fileID: 1892572026}
+  - component: {fileID: 1892572027}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -8367,6 +8494,23 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &1892572027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892572020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdea8aa7651c2b44a8c9a35d02fb7bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToBob: {fileID: 1516002629}
+  _amplitudeX: 0.6
+  _frequencyX: 0.5
+  _amplitudeY: 0.7
+  _frequencyY: 0.5
 --- !u!1 &1903956453
 GameObject:
   m_ObjectHideFlags: 0
@@ -8967,6 +9111,7 @@ GameObject:
   - component: {fileID: 2081874925}
   - component: {fileID: 2081874926}
   - component: {fileID: 2081874927}
+  - component: {fileID: 2081874928}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -9100,6 +9245,23 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &2081874928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081874921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdea8aa7651c2b44a8c9a35d02fb7bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToBob: {fileID: 1500996489}
+  _amplitudeX: 0.7
+  _frequencyX: 0.5
+  _amplitudeY: 0.5
+  _frequencyY: 0.2
 --- !u!1 &2085437815
 GameObject:
   m_ObjectHideFlags: 0
@@ -9114,6 +9276,7 @@ GameObject:
   - component: {fileID: 2085437819}
   - component: {fileID: 2085437820}
   - component: {fileID: 2085437821}
+  - component: {fileID: 2085437822}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -9247,6 +9410,23 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &2085437822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085437815}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdea8aa7651c2b44a8c9a35d02fb7bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToBob: {fileID: 1903956453}
+  _amplitudeX: 0.5
+  _frequencyX: 0.5
+  _amplitudeY: 0.5
+  _frequencyY: 0.5
 --- !u!1 &2094692125
 GameObject:
   m_ObjectHideFlags: 0
