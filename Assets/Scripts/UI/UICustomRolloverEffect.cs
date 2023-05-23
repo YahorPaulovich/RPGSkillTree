@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Unity.VectorGraphics;
-using DG.Tweening;
 using TMPro;
 
 public class UICustomRolloverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
@@ -24,27 +23,25 @@ public class UICustomRolloverEffect : MonoBehaviour, IPointerEnterHandler, IPoin
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        AnimateGlow();
-
-        _costIndicatorImage.CrossFadeAlpha(0.9f, 0.5f, true);
-        _costIndicatorText.CrossFadeAlpha(0.9f, 0.5f, true);
+        HoverAnimation();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        AnimatePreviousColor();
+        ExitAnimation();
+    }
 
+    private void HoverAnimation()
+    {
+        _ellipseImage.CrossFadeColor(_ellipseColor, 1f, true, false);
+        _costIndicatorImage.CrossFadeAlpha(0.9f, 0.5f, true);
+        _costIndicatorText.CrossFadeAlpha(0.9f, 0.5f, true);
+    }
+
+    private void ExitAnimation()
+    {
+        _ellipseImage.CrossFadeColor(_previousEllipseColor, 1f, true, false);
         _costIndicatorImage.CrossFadeAlpha(0.0f, 0.5f, true);
         _costIndicatorText.CrossFadeAlpha(0.0f, 0.5f, true);
-    }
-
-    private void AnimateGlow()
-    {
-        _ellipseImage.DOColor(_ellipseColor, 1f);
-    }
-
-    private void AnimatePreviousColor()
-    {
-        _ellipseImage.DOColor(_previousEllipseColor, 1f);
     }
 }
