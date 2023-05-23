@@ -67,7 +67,7 @@ Material:
     - _Float: 2
     - _Glow: 4.16
     - _Phase: 0
-    - _Segments: 0.33
+    - _Segments: 1.24
     - _Speed: 1.2
     m_Colors:
     - _Color: {r: 1, g: 0, b: 0, a: 1}
