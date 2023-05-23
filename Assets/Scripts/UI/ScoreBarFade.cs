@@ -9,6 +9,7 @@ public class ScoreBarFade : MonoBehaviour
     [SerializeField] private Image _barImage;
     [SerializeField] private Image _spentBarImage;
     [SerializeField] private TMP_Text _scoreText;
+
     private Color _spentColor;
     private float _spentScoreFadeTimer;
     private ScoreSystem _scoreSystem;

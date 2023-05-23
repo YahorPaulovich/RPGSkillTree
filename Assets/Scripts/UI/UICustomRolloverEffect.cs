@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using Unity.VectorGraphics;
 using TMPro;
+using UnityEngine.UI;
 
 public class UICustomRolloverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
