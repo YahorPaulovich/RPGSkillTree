@@ -43,22 +43,25 @@ public class ScoreBarFade : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        _scoreSystem.OnSpent -= ScoreSystem_OnSpent;
+        _scoreSystem.OnEarned -= ScoreSystem_OnEarned;
+    }
+
     public void EarnPoints()
     {
-        _scoreSystem.Earn(10);       
-        _scoreText.text = _scoreSystem.ScoreAmount.ToString();
+        _scoreSystem.Earn(1);
     }
 
     public void SpendPoints()
     {
-        _scoreSystem.Spend(10);
-        _scoreText.text = _scoreSystem.ScoreAmount.ToString();
+        _scoreSystem.Spend(1);
     }
 
     public void EarnAllPoints()
     {
         _scoreSystem.Earn(100);
-        _scoreText.text = _scoreSystem.ScoreAmount.ToString();
     }
 
     private void ScoreSystem_OnEarned(object sender, System.EventArgs e)
@@ -83,5 +86,6 @@ public class ScoreBarFade : MonoBehaviour
     private void SetScore(float healthNormalized)
     {
         _barImage.fillAmount = healthNormalized;
+        _scoreText.text = _scoreSystem.ScoreAmount.ToString();
     }
 }

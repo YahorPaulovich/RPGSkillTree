@@ -2036,6 +2036,7 @@ GameObject:
   - component: {fileID: 487288694}
   - component: {fileID: 487288693}
   - component: {fileID: 487288696}
+  - component: {fileID: 487288697}
   m_Layer: 5
   m_Name: Forget Button
   m_TagString: Untagged
@@ -2165,6 +2166,21 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: 52104bc3637e70540be457e0ba1ba9cd, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &487288697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487288691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -3.29, y: -3.49}
+  m_UseGraphicAlpha: 1
 --- !u!1 &492867626
 GameObject:
   m_ObjectHideFlags: 0
@@ -4287,6 +4303,7 @@ GameObject:
   - component: {fileID: 795690714}
   - component: {fileID: 795690713}
   - component: {fileID: 795690716}
+  - component: {fileID: 795690717}
   m_Layer: 5
   m_Name: Study Button
   m_TagString: Untagged
@@ -4416,6 +4433,21 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: 52104bc3637e70540be457e0ba1ba9cd, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &795690717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795690711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -3.29, y: -3.49}
+  m_UseGraphicAlpha: 1
 --- !u!1 &840505414
 GameObject:
   m_ObjectHideFlags: 0
@@ -7649,6 +7681,7 @@ GameObject:
   - component: {fileID: 1756246015}
   - component: {fileID: 1756246012}
   - component: {fileID: 1756246016}
+  - component: {fileID: 1756246017}
   m_Layer: 5
   m_Name: Earn Button
   m_TagString: Untagged
@@ -7778,6 +7811,21 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: 52104bc3637e70540be457e0ba1ba9cd, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &1756246017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756246010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -3.29, y: -3.49}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1779733856
 GameObject:
   m_ObjectHideFlags: 0
@@ -8935,6 +8983,7 @@ GameObject:
   - component: {fileID: 2027979121}
   - component: {fileID: 2027979120}
   - component: {fileID: 2027979123}
+  - component: {fileID: 2027979124}
   m_Layer: 5
   m_Name: Forget All Button
   m_TagString: Untagged
@@ -9064,6 +9113,21 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: 52104bc3637e70540be457e0ba1ba9cd, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &2027979124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027979118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -3.29, y: -3.49}
+  m_UseGraphicAlpha: 1
 --- !u!1 &2081874921
 GameObject:
   m_ObjectHideFlags: 0
