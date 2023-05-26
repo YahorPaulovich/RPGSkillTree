@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 public class SkillGroup : Skill
 {
-    private List<Skill> skills = new List<Skill>();
+    private List<Skill> _skills = new List<Skill>();
 
     public SkillGroup(string name) : base(name)
     {
@@ -10,28 +10,28 @@ public class SkillGroup : Skill
 
     public void AddSkill(Skill skill)
     {
-        skills.Add(skill);
+        _skills.Add(skill);
     }
 
     public void RemoveSkill(Skill skill)
     {
-        skills.Remove(skill);
+        _skills.Remove(skill);
     }
 
     public ISkillIterator CreateIterator()
     {
-        return new SkillGroupIterator(skills);
+        return new SkillGroupIterator(_skills);
     }
 
     public List<Skill> GetSkills()
     {
-        return skills;
+        return _skills;
     }
 
     public override void Accept(ISkillVisitor visitor)
     {
         visitor.VisitSkill(this);
-        foreach (var skill in skills)
+        foreach (var skill in _skills)
         {
             skill.Accept(visitor);
         }

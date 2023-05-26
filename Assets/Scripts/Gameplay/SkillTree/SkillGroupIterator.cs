@@ -2,27 +2,27 @@ using System.Collections.Generic;
 
 public class SkillGroupIterator : ISkillIterator
 {
-    private List<Skill> skills;
-    private int currentIndex = -1;
+    private List<Skill> _skills;
+    private int _currentIndex = -1;
 
     public SkillGroupIterator(List<Skill> skills)
     {
-        this.skills = skills;
+        _skills = skills;
     }
 
     public Skill GetCurrent()
     {
-        return skills[currentIndex];
+        return _skills[_currentIndex];
     }
 
     public bool MoveNext()
     {
-        currentIndex++;
-        return currentIndex < skills.Count;
+        _currentIndex++;
+        return _currentIndex < _skills.Count;
     }
 
     public void Reset()
     {
-        currentIndex = -1;
+        _currentIndex = -1;
     }
 }
