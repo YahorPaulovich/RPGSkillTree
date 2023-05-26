@@ -88,14 +88,4 @@ public class ScoreBarFade : MonoBehaviour
         _barImage.fillAmount = healthNormalized;
         _scoreText.text = _scoreSystem.ScoreAmount.ToString();
     }
-
-    private void OnEnable()
-    {
-        
-    }
-
-    private void OnDisable()
-    {
-        
-    }
 }
