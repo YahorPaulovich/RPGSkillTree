@@ -43,7 +43,7 @@ public class SkillTree : MonoBehaviour
         root.AddSkill(group4);
 
         // Display the skill tree using the visitor.
-        DisplayAllSkills(root);
+        DisplaySkillTree(root);
 
         // Bypass the skill tree using the iterator.
         SkillTreeBypass(root);
@@ -52,7 +52,7 @@ public class SkillTree : MonoBehaviour
         //SkillGroupBypass(group1);
     }
 
-    private static void DisplayAllSkills(SkillGroup root)
+    private static void DisplaySkillTree(SkillGroup root)
     {
         Debug.Log("Displaying the skill tree using the visitor:");
         var displayVisitor = new SkillDisplayVisitor();
