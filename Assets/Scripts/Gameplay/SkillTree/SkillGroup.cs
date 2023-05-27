@@ -2,6 +2,8 @@ using System.Collections.Generic;
 
 public class SkillGroup : Skill
 {
+    public int Count => _count;
+    private int _count = 0;
     private List<Skill> _skills = new List<Skill>();
 
     public SkillGroup(string name) : base(name)
@@ -11,11 +13,13 @@ public class SkillGroup : Skill
     public void AddSkill(Skill skill)
     {
         _skills.Add(skill);
+        _count++;
     }
 
     public void RemoveSkill(Skill skill)
     {
         _skills.Remove(skill);
+        _count--;
     }
 
     public ISkillIterator CreateIterator()

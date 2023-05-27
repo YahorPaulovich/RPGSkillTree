@@ -10,7 +10,13 @@ public class ScoreSystem
 
     public ScoreSystem(int scoreAmount)
     {
-        _scoreAmountMax = scoreAmount;
+        _scoreAmountMax = 100;
+        ScoreAmount = scoreAmount;
+    }
+
+    public ScoreSystem(int scoreAmountMax, int scoreAmount)
+    {
+        _scoreAmountMax = scoreAmountMax;
         ScoreAmount = scoreAmount;
     }
 

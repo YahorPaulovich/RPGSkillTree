@@ -416,7 +416,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &106223375
 RectTransform:
   m_ObjectHideFlags: 0
@@ -450,7 +450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 8d66e65c66e29504199ed664979682cd, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -913,6 +913,7 @@ GameObject:
   - component: {fileID: 228856734}
   - component: {fileID: 228856735}
   - component: {fileID: 228856736}
+  - component: {fileID: 228856737}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -1046,6 +1047,19 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &228856737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228856730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623239bbdf2d6d04d8499a74b02d89df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CostIndicatorText: {fileID: 1254545534}
 --- !u!1 &231408149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,6 +1074,7 @@ GameObject:
   - component: {fileID: 231408153}
   - component: {fileID: 231408154}
   - component: {fileID: 231408155}
+  - component: {fileID: 231408156}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -1193,6 +1208,19 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &231408156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231408149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623239bbdf2d6d04d8499a74b02d89df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CostIndicatorText: {fileID: 1145305063}
 --- !u!1 &235707185
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,6 +1235,7 @@ GameObject:
   - component: {fileID: 235707189}
   - component: {fileID: 235707190}
   - component: {fileID: 235707191}
+  - component: {fileID: 235707192}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -1340,6 +1369,19 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &235707192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235707185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623239bbdf2d6d04d8499a74b02d89df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CostIndicatorText: {fileID: 840505416}
 --- !u!1 &294344007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,7 +1399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &294344008
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1391,7 +1433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 8d66e65c66e29504199ed664979682cd, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1744,7 +1786,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &430989435
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1778,7 +1820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 8d66e65c66e29504199ed664979682cd, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2109,9 +2151,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 540116924}
-        m_TargetAssemblyTypeName: ScoreBarFade, Assembly-CSharp
-        m_MethodName: EarnPoints
+      - m_Target: {fileID: 1269828202}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: SpendPoints
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3075,6 +3117,7 @@ MonoBehaviour:
   _barImage: {fileID: 1640510224}
   _spentBarImage: {fileID: 1281111654}
   _scoreText: {fileID: 522591755}
+  _player: {fileID: 1269828202}
 --- !u!1 &550846586
 GameObject:
   m_ObjectHideFlags: 0
@@ -3092,7 +3135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &550846587
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3126,7 +3169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 8d66e65c66e29504199ed664979682cd, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3292,6 +3335,7 @@ GameObject:
   - component: {fileID: 586898201}
   - component: {fileID: 586898202}
   - component: {fileID: 586898203}
+  - component: {fileID: 586898204}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -3425,6 +3469,19 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &586898204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586898197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623239bbdf2d6d04d8499a74b02d89df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CostIndicatorText: {fileID: 661873195}
 --- !u!1 &597460797
 GameObject:
   m_ObjectHideFlags: 0
@@ -4042,6 +4099,7 @@ GameObject:
   - component: {fileID: 750410107}
   - component: {fileID: 750410108}
   - component: {fileID: 750410109}
+  - component: {fileID: 750410110}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -4175,6 +4233,19 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &750410110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750410103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623239bbdf2d6d04d8499a74b02d89df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CostIndicatorText: {fileID: 108312664}
 --- !u!1 &755180137
 GameObject:
   m_ObjectHideFlags: 0
@@ -4376,8 +4447,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 540116924}
-        m_TargetAssemblyTypeName: ScoreBarFade, Assembly-CSharp
+      - m_Target: {fileID: 1269828202}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: SpendPoints
         m_Mode: 1
         m_Arguments:
@@ -4946,7 +5017,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &972826854
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4980,7 +5051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 8d66e65c66e29504199ed664979682cd, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5217,7 +5288,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &989616043
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5251,7 +5322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 8d66e65c66e29504199ed664979682cd, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5432,7 +5503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &994897275
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5466,7 +5537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 8d66e65c66e29504199ed664979682cd, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5538,7 +5609,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1020420866
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5863,6 +5934,7 @@ GameObject:
   - component: {fileID: 1243054509}
   - component: {fileID: 1243054510}
   - component: {fileID: 1243054511}
+  - component: {fileID: 1243054512}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -5996,6 +6068,19 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &1243054512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243054505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623239bbdf2d6d04d8499a74b02d89df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CostIndicatorText: {fileID: 152870931}
 --- !u!1 &1254545532
 GameObject:
   m_ObjectHideFlags: 0
@@ -6169,6 +6254,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 3.8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1269828201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1269828203}
+  - component: {fileID: 1269828202}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1269828202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269828201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86990e4ac84fa5f4fbd8ef2364fe6cda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _initialPointsAmount: 0
+--- !u!4 &1269828203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269828201}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1279571824
 GameObject:
   m_ObjectHideFlags: 0
@@ -6186,7 +6316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1279571825
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6220,7 +6350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 8d66e65c66e29504199ed664979682cd, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6913,6 +7043,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85383e127b146274d91baba7a307c5c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 1269828202}
+  _skillVertexes:
+  - {fileID: 2085437815}
+  - {fileID: 1892572020}
+  - {fileID: 750410103}
+  - {fileID: 2081874921}
+  - {fileID: 235707185}
+  - {fileID: 586898197}
+  - {fileID: 231408149}
+  - {fileID: 1243054505}
+  - {fileID: 1874574484}
+  - {fileID: 228856730}
 --- !u!1 &1485897223
 GameObject:
   m_ObjectHideFlags: 0
@@ -7502,7 +7644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1703355806
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7536,7 +7678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 8d66e65c66e29504199ed664979682cd, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7690,8 +7832,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 540116924}
-        m_TargetAssemblyTypeName: ScoreBarFade, Assembly-CSharp
+      - m_Target: {fileID: 1269828202}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: EarnPoints
         m_Mode: 1
         m_Arguments:
@@ -7979,6 +8121,7 @@ GameObject:
   - component: {fileID: 1874574488}
   - component: {fileID: 1874574489}
   - component: {fileID: 1874574490}
+  - component: {fileID: 1874574491}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -8112,6 +8255,19 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &1874574491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874574484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623239bbdf2d6d04d8499a74b02d89df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CostIndicatorText: {fileID: 843646564}
 --- !u!1 &1881581113
 GameObject:
   m_ObjectHideFlags: 0
@@ -8129,7 +8285,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1881581114
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8163,7 +8319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 8d66e65c66e29504199ed664979682cd, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8329,6 +8485,7 @@ GameObject:
   - component: {fileID: 1892572024}
   - component: {fileID: 1892572025}
   - component: {fileID: 1892572026}
+  - component: {fileID: 1892572027}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -8462,6 +8619,19 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &1892572027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892572020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623239bbdf2d6d04d8499a74b02d89df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CostIndicatorText: {fileID: 1445156028}
 --- !u!1 &1903956453
 GameObject:
   m_ObjectHideFlags: 0
@@ -8992,8 +9162,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 540116924}
-        m_TargetAssemblyTypeName: ScoreBarFade, Assembly-CSharp
+      - m_Target: {fileID: 1269828202}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: EarnAllPoints
         m_Mode: 1
         m_Arguments:
@@ -9078,6 +9248,7 @@ GameObject:
   - component: {fileID: 2081874925}
   - component: {fileID: 2081874926}
   - component: {fileID: 2081874927}
+  - component: {fileID: 2081874928}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -9211,6 +9382,19 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &2081874928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081874921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623239bbdf2d6d04d8499a74b02d89df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CostIndicatorText: {fileID: 1882625855}
 --- !u!1 &2085437815
 GameObject:
   m_ObjectHideFlags: 0
@@ -9225,6 +9409,7 @@ GameObject:
   - component: {fileID: 2085437819}
   - component: {fileID: 2085437820}
   - component: {fileID: 2085437821}
+  - component: {fileID: 2085437822}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -9322,7 +9507,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2085437817}
   m_OnClick:
     m_PersistentCalls:
@@ -9358,6 +9543,19 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &2085437822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085437815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623239bbdf2d6d04d8499a74b02d89df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CostIndicatorText: {fileID: 673511399}
 --- !u!1 &2094692125
 GameObject:
   m_ObjectHideFlags: 0
@@ -9503,7 +9701,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2107119522
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9537,7 +9735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 8d66e65c66e29504199ed664979682cd, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

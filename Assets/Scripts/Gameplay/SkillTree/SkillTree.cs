@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class SkillTree : MonoBehaviour
 {
+    [SerializeField] private Player _player;
+    [SerializeField] private GameObject[] _skillVertexes = new GameObject[10];
+
     private void Start()
     {
         var root = new SkillGroup("Root");
@@ -11,16 +14,16 @@ public class SkillTree : MonoBehaviour
         var group3 = new SkillGroup("Group 3");
         var group4 = new SkillGroup("Group 4");
 
-        var skill1 = new SkillLeaf("Skill 1");
-        var skill2 = new SkillLeaf("Skill 2");
-        var skill3 = new SkillLeaf("Skill 3");
-        var skill4 = new SkillLeaf("Skill 4");
-        var skill5 = new SkillLeaf("Skill 5");
-        var skill6 = new SkillLeaf("Skill 6");
-        var skill7 = new SkillLeaf("Skill 7");
-        var skill8 = new SkillLeaf("Skill 8");
-        var skill9 = new SkillLeaf("Skill 9");
-        var skill10 = new SkillLeaf("Skill 10");
+        var skill1 = new SkillLeaf("Skill 1", "", 4);
+        var skill2 = new SkillLeaf("Skill 2", "", 6);
+        var skill3 = new SkillLeaf("Skill 3", "", 8);
+        var skill4 = new SkillLeaf("Skill 4", "", 10);
+        var skill5 = new SkillLeaf("Skill 5", "", 12);
+        var skill6 = new SkillLeaf("Skill 6", "", 14);
+        var skill7 = new SkillLeaf("Skill 7", "", 16);
+        var skill8 = new SkillLeaf("Skill 8", "", 10);
+        var skill9 = new SkillLeaf("Skill 9", "", 10);
+        var skill10 = new SkillLeaf("Skill 10", "", 10);
 
         group1.AddSkill(skill2);
         group1.AddSkill(skill3);
@@ -42,34 +45,44 @@ public class SkillTree : MonoBehaviour
         root.AddSkill(group3);
         root.AddSkill(group4);
 
-        // Display the skill tree using the visitor.
-        DisplaySkillTree(root);
-
         // Bypass the skill tree using the iterator.
-        SkillTreeBypass(root);
-
-        // Bypass the skill group using the iterator.
-        //SkillGroupBypass(group1);
+        SkillTreeBypassV2(root);
     }
 
-    private static void DisplaySkillTree(SkillGroup root)
+    private static void DisplaySkillTree(SkillGroup group)
     {
         Debug.Log("Displaying the skill tree using the visitor:");
         var displayVisitor = new SkillDisplayVisitor();
-        root.Accept(displayVisitor);
-        Debug.Log("");
+        group.Accept(displayVisitor);
     }
 
-    private static void SkillTreeBypass(SkillGroup root)
+    private static void SkillTreeBypass(SkillGroup group)
     {
         Debug.Log("Bypassing the skill tree using the iterator:");
-        var treeIterator = new SkillTreeIterator(root);
+        var treeIterator = new SkillTreeIterator(group);
         while (treeIterator.MoveNext())
         {
             var skill = treeIterator.GetCurrent();
             Debug.Log(skill.Name);
+        }       
+    }
+
+    private void SkillTreeBypassV2(SkillGroup group)
+    {
+        var treeIterator = new SkillTreeIterator(group);
+        var ints = new int[9];
+        int iterator = 9;
+        while (treeIterator.MoveNext())
+        {
+            var skill = treeIterator.GetCurrent();
+
+            if (skill.Name.Contains("Skill") && iterator >= 0 && iterator <= 9)
+            {
+                Debug.Log(skill.Name);
+                _skillVertexes[iterator].GetComponent<SkillVertex>().CostIndicatorText.text = skill.Cost.ToString() + " points";
+                iterator--;
+            }
         }
-        Debug.Log("");
     }
 
     private static void SkillGroupBypass(SkillGroup group)
@@ -81,6 +94,16 @@ public class SkillTree : MonoBehaviour
             var skill = groupIterator.GetCurrent();
             Debug.Log(skill.Name);
         }
-        Debug.Log("");
+    }
+
+    private static int GetCountNumberOfSkills(SkillGroup group)
+    {
+        int count = 0;
+        var treeIterator = new SkillTreeIterator(group);
+        while (treeIterator.MoveNext())
+        {
+            count++;
+        }
+        return count;
     }
 }

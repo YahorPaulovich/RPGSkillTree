@@ -12,7 +12,7 @@ public class ScoreBarFade : MonoBehaviour
 
     private Color _spentColor;
     private float _spentScoreFadeTimer;
-    private ScoreSystem _scoreSystem;
+    [SerializeField] private Player _player;
 
     private void Awake()
     {
@@ -23,10 +23,10 @@ public class ScoreBarFade : MonoBehaviour
 
     private void Start()
     {
-        _scoreSystem = new ScoreSystem(100);
-        SetScore(_scoreSystem.GetScoreNormalized());
-        _scoreSystem.OnSpent += ScoreSystem_OnSpent;
-        _scoreSystem.OnEarned += ScoreSystem_OnEarned;
+        //_player.Score = new ScoreSystem(100);
+        SetScore(_player.Score.GetScoreNormalized());
+        _player.Score.OnSpent += ScoreSystem_OnSpent;
+        _player.Score.OnEarned += ScoreSystem_OnEarned;
     }
 
     private void Update()
@@ -45,28 +45,13 @@ public class ScoreBarFade : MonoBehaviour
 
     private void OnDestroy()
     {
-        _scoreSystem.OnSpent -= ScoreSystem_OnSpent;
-        _scoreSystem.OnEarned -= ScoreSystem_OnEarned;
-    }
-
-    public void EarnPoints()
-    {
-        _scoreSystem.Earn(1);
-    }
-
-    public void SpendPoints()
-    {
-        _scoreSystem.Spend(1);
-    }
-
-    public void EarnAllPoints()
-    {
-        _scoreSystem.Earn(100);
+        _player.Score.OnSpent -= ScoreSystem_OnSpent;
+        _player.Score.OnEarned -= ScoreSystem_OnEarned;
     }
 
     private void ScoreSystem_OnEarned(object sender, System.EventArgs e)
     {
-        SetScore(_scoreSystem.GetScoreNormalized());
+        SetScore(_player.Score.GetScoreNormalized());
     }
 
     private void ScoreSystem_OnSpent(object sender, System.EventArgs e)
@@ -80,12 +65,12 @@ public class ScoreBarFade : MonoBehaviour
         _spentBarImage.color = _spentColor;
         _spentScoreFadeTimer = SPENT_SCORE_FADE_TIMER_MAX;
 
-        SetScore(_scoreSystem.GetScoreNormalized());
+        SetScore(_player.Score.GetScoreNormalized());
     }
 
     private void SetScore(float healthNormalized)
     {
         _barImage.fillAmount = healthNormalized;
-        _scoreText.text = _scoreSystem.ScoreAmount.ToString();
+        _scoreText.text = _player.Score.ScoreAmount.ToString();
     }
 }
