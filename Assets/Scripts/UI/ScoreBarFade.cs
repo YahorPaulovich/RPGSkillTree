@@ -17,7 +17,7 @@ public class ScoreBarFade : MonoBehaviour
     private void Awake()
     {
         _spentColor = _spentBarImage.color;
-        _spentColor.a = 0f;
+       // _spentColor.a = 0f;
         _spentBarImage.color = _spentColor;
     }
 
@@ -71,6 +71,6 @@ public class ScoreBarFade : MonoBehaviour
     private void SetScore(float healthNormalized)
     {
         _barImage.fillAmount = healthNormalized;
-        _scoreText.text = _player.Score.ScoreAmount.ToString();
+        _scoreText.text = _player.Score.Amount.ToString();
     }
 }

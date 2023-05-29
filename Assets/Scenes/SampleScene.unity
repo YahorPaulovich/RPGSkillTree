@@ -341,19 +341,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 28794165}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1269828202}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: SpendPoints
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &28794165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1214,10 +1202,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 228856730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 623239bbdf2d6d04d8499a74b02d89df, type: 3}
+  m_Script: {fileID: 11500000, guid: fe8db6d46fe36234f9d4cc4021b461de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 10
+  _cost: 10
   CostIndicatorText: {fileID: 1254545534}
+  SkillConnections:
+  - {fileID: 1703355805}
+  - {fileID: 2107119521}
+  Prerequisites:
+  - {fileID: 1243054512}
+  - {fileID: 1874574491}
 --- !u!1 &231408149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,10 +1371,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 231408149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 623239bbdf2d6d04d8499a74b02d89df, type: 3}
+  m_Script: {fileID: 11500000, guid: fe8db6d46fe36234f9d4cc4021b461de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 7
+  _cost: 16
   CostIndicatorText: {fileID: 1145305063}
+  SkillConnections:
+  - {fileID: 994897274}
+  - {fileID: 1881581113}
+  Prerequisites:
+  - {fileID: 2081874928}
+  - {fileID: 235707192}
+  - {fileID: 586898204}
 --- !u!1 &235707185
 GameObject:
   m_ObjectHideFlags: 0
@@ -1536,10 +1541,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 235707185}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 623239bbdf2d6d04d8499a74b02d89df, type: 3}
+  m_Script: {fileID: 11500000, guid: fe8db6d46fe36234f9d4cc4021b461de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 5
+  _cost: 12
   CostIndicatorText: {fileID: 840505416}
+  SkillConnections:
+  - {fileID: 550846586}
+  Prerequisites:
+  - {fileID: 2081874928}
 --- !u!1 &294344007
 GameObject:
   m_ObjectHideFlags: 0
@@ -2847,7 +2858,7 @@ MonoBehaviour:
   _barImage: {fileID: 1640510224}
   _spentBarImage: {fileID: 1281111654}
   _scoreText: {fileID: 522591755}
-  _player: {fileID: 1269828202}
+  _player: {fileID: 1269828204}
 --- !u!1 &550846586
 GameObject:
   m_ObjectHideFlags: 0
@@ -3208,10 +3219,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 586898197}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 623239bbdf2d6d04d8499a74b02d89df, type: 3}
+  m_Script: {fileID: 11500000, guid: fe8db6d46fe36234f9d4cc4021b461de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 6
+  _cost: 14
   CostIndicatorText: {fileID: 661873195}
+  SkillConnections:
+  - {fileID: 430989434}
+  Prerequisites:
+  - {fileID: 2081874928}
 --- !u!1 &597460797
 GameObject:
   m_ObjectHideFlags: 0
@@ -3815,7 +3832,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 910.3, y: -33.705013}
+  m_AnchoredPosition: {x: 910.2999, y: -33.705013}
   m_SizeDelta: {x: 185.61, y: 31.57}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &744994852
@@ -3911,19 +3928,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 744994856}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1269828202}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: EarnAllPoints
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &744994856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4111,10 +4116,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 750410103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 623239bbdf2d6d04d8499a74b02d89df, type: 3}
+  m_Script: {fileID: 11500000, guid: fe8db6d46fe36234f9d4cc4021b461de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 3
+  _cost: 9
   CostIndicatorText: {fileID: 108312664}
+  SkillConnections:
+  - {fileID: 1279571824}
+  Prerequisites:
+  - {fileID: 993614185}
+  - {fileID: 1892572027}
 --- !u!1 &755180137
 GameObject:
   m_ObjectHideFlags: 0
@@ -5064,6 +5076,7 @@ GameObject:
   - component: {fileID: 993614182}
   - component: {fileID: 993614183}
   - component: {fileID: 993614184}
+  - component: {fileID: 993614185}
   m_Layer: 5
   m_Name: Ellipse
   m_TagString: Untagged
@@ -5197,6 +5210,23 @@ MonoBehaviour:
   _audioSource: {fileID: 2094692126}
   _pointerUpSoundFX: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
   _pointerUpSoundFXNotAvailable: {fileID: 8300000, guid: 44a5d716536c11248a09ee1a54d5d168, type: 3}
+--- !u!114 &993614185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993614178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe8db6d46fe36234f9d4cc4021b461de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Base
+  _cost: 0
+  CostIndicatorText: {fileID: 982103453}
+  SkillConnections: []
+  Prerequisites: []
 --- !u!1 &994897274
 GameObject:
   m_ObjectHideFlags: 0
@@ -5788,10 +5818,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1243054505}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 623239bbdf2d6d04d8499a74b02d89df, type: 3}
+  m_Script: {fileID: 11500000, guid: fe8db6d46fe36234f9d4cc4021b461de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 8
+  _cost: 10
   CostIndicatorText: {fileID: 152870931}
+  SkillConnections:
+  - {fileID: 294344007}
+  Prerequisites:
+  - {fileID: 993614185}
 --- !u!1 &1254545532
 GameObject:
   m_ObjectHideFlags: 0
@@ -5974,7 +6010,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1269828203}
-  - component: {fileID: 1269828202}
+  - component: {fileID: 1269828204}
+  - component: {fileID: 1269828205}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5982,19 +6019,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1269828202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1269828201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86990e4ac84fa5f4fbd8ef2364fe6cda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _initialPointsAmount: 0
 --- !u!4 &1269828203
 Transform:
   m_ObjectHideFlags: 0
@@ -6010,6 +6034,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1269828204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269828201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86990e4ac84fa5f4fbd8ef2364fe6cda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _initialPointsAmount: 1
+  _skillTree: {fileID: 1481510670}
+--- !u!114 &1269828205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269828201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e45491b104d7a92459618f812c1d6d2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _earnButton: {fileID: 1754878366}
+  LearnButton: {fileID: 1948882764}
+  ForgetButton: {fileID: 28794164}
+  ForgetAllButton: {fileID: 744994855}
 --- !u!1 &1279571824
 GameObject:
   m_ObjectHideFlags: 0
@@ -6754,18 +6808,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85383e127b146274d91baba7a307c5c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 1269828202}
-  _skillVertexes:
-  - {fileID: 2085437815}
-  - {fileID: 1892572020}
-  - {fileID: 750410103}
-  - {fileID: 2081874921}
-  - {fileID: 235707185}
-  - {fileID: 586898197}
-  - {fileID: 231408149}
-  - {fileID: 1243054505}
-  - {fileID: 1874574484}
-  - {fileID: 228856730}
+  _skills:
+  - {fileID: 993614185}
+  - {fileID: 2085437822}
+  - {fileID: 1892572027}
+  - {fileID: 750410110}
+  - {fileID: 2081874928}
+  - {fileID: 235707192}
+  - {fileID: 586898204}
+  - {fileID: 231408156}
+  - {fileID: 1243054512}
+  - {fileID: 1874574491}
+  - {fileID: 228856737}
+  _skillConnections: []
 --- !u!1 &1485897223
 GameObject:
   m_ObjectHideFlags: 0
@@ -7464,7 +7519,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Study
+  m_text: Learn
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fb248df6c0b9c3a40a1d0ac0fbf4a08a, type: 2}
   m_sharedMaterial: {fileID: 3139775202816816170, guid: fb248df6c0b9c3a40a1d0ac0fbf4a08a, type: 2}
@@ -7707,19 +7762,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1754878367}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1269828202}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: EarnPoints
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1754878367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8110,10 +8153,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1874574484}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 623239bbdf2d6d04d8499a74b02d89df, type: 3}
+  m_Script: {fileID: 11500000, guid: fe8db6d46fe36234f9d4cc4021b461de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 9
+  _cost: 10
   CostIndicatorText: {fileID: 843646564}
+  SkillConnections:
+  - {fileID: 972826853}
+  Prerequisites:
+  - {fileID: 993614185}
 --- !u!1 &1881581113
 GameObject:
   m_ObjectHideFlags: 0
@@ -8474,10 +8523,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1892572020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 623239bbdf2d6d04d8499a74b02d89df, type: 3}
+  m_Script: {fileID: 11500000, guid: fe8db6d46fe36234f9d4cc4021b461de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 2
+  _cost: 8
   CostIndicatorText: {fileID: 1445156028}
+  SkillConnections:
+  - {fileID: 106223374}
+  Prerequisites:
+  - {fileID: 993614185}
 --- !u!1 &1903956453
 GameObject:
   m_ObjectHideFlags: 0
@@ -8667,7 +8722,7 @@ GameObject:
   - component: {fileID: 1948882763}
   - component: {fileID: 1948882762}
   m_Layer: 5
-  m_Name: Study Button
+  m_Name: Learn Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8767,19 +8822,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1948882765}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1269828202}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: SpendPoints
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1948882765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9253,7 +9296,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -309.69995, y: 13.600006}
+  m_AnchoredPosition: {x: -309.69995, y: 13.599976}
   m_SizeDelta: {x: -722.8, y: 35.840027}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &2034070759
@@ -9439,10 +9482,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2081874921}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 623239bbdf2d6d04d8499a74b02d89df, type: 3}
+  m_Script: {fileID: 11500000, guid: fe8db6d46fe36234f9d4cc4021b461de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 4
+  _cost: 10
   CostIndicatorText: {fileID: 1882625855}
+  SkillConnections:
+  - {fileID: 989616042}
+  Prerequisites:
+  - {fileID: 993614185}
 --- !u!1 &2085437815
 GameObject:
   m_ObjectHideFlags: 0
@@ -9600,10 +9649,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2085437815}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 623239bbdf2d6d04d8499a74b02d89df, type: 3}
+  m_Script: {fileID: 11500000, guid: fe8db6d46fe36234f9d4cc4021b461de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 1
+  _cost: 1
   CostIndicatorText: {fileID: 673511399}
+  SkillConnections:
+  - {fileID: 1020420865}
+  Prerequisites:
+  - {fileID: 993614185}
 --- !u!1 &2094692125
 GameObject:
   m_ObjectHideFlags: 0

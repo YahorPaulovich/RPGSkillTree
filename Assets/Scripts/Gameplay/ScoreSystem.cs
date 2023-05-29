@@ -4,44 +4,47 @@ public class ScoreSystem
 {
     public event EventHandler OnSpent;
     public event EventHandler OnEarned;
+    public event EventHandler OnScoreChanged;
 
-    public int ScoreAmount;
-    private int _scoreAmountMax;
+    public int Amount;
+    private int _amountMax;
 
     public ScoreSystem(int scoreAmount)
     {
-        _scoreAmountMax = 100;
-        ScoreAmount = scoreAmount;
+        _amountMax = 100;
+        Amount = scoreAmount;
     }
 
     public ScoreSystem(int scoreAmountMax, int scoreAmount)
     {
-        _scoreAmountMax = scoreAmountMax;
-        ScoreAmount = scoreAmount;
+        _amountMax = scoreAmountMax;
+        Amount = scoreAmount;
     }
 
     public void Spend(int amount)
     {
-        ScoreAmount -= amount;
-        if (ScoreAmount < 0)
+        Amount -= amount;
+        if (Amount < 0)
         {
-            ScoreAmount = 0;
+            Amount = 0;
         }
         if (OnSpent != null) OnSpent(this, EventArgs.Empty);
+        if (OnScoreChanged != null) OnScoreChanged(this, EventArgs.Empty);
     }
 
     public void Earn(int amount)
     {
-        ScoreAmount += amount;
-        if (ScoreAmount > _scoreAmountMax)
+        Amount += amount;
+        if (Amount > _amountMax)
         {
-            ScoreAmount = _scoreAmountMax;
+            Amount = _amountMax;
         }
         if (OnEarned != null) OnEarned(this, EventArgs.Empty);
+        if (OnScoreChanged != null) OnScoreChanged(this, EventArgs.Empty);
     }
 
     public float GetScoreNormalized()
     {
-        return (float)ScoreAmount / _scoreAmountMax;
+        return (float)Amount / _amountMax;
     }
 }

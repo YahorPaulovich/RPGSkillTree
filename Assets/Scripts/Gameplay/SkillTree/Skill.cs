@@ -1,29 +1,50 @@
-public abstract class Skill
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using TMPro;
+
+[RequireComponent(typeof(Button))]
+public class Skill : MonoBehaviour, IPointerUpHandler
 {
-    public string Name { get; }
-    public string Description { get; }
-    public int Cost { get; }
+    public string Name => _name;
+    [SerializeField] private string _name = "Unnamed Skill";
+    public int Cost => _cost;
+    [SerializeField] private int _cost = 0;
+    public bool IsLearned { get; set; } = false;
+    public bool IsSelected { get; set; } = false;
 
-    public Skill(string name)
+    public TMP_Text CostIndicatorText;
+    public GameObject[] SkillConnections;
+    public List<Skill> Prerequisites;
+    public event EventHandler OnSkillSelected;
+
+    private void Awake()
     {
-        Name = name;
-        Description = string.Empty;
-        Cost = 0;
+        if (CostIndicatorText)
+        {
+            CostIndicatorText.text = Cost.ToString() + " points";
+        }
+
+        InitializeWithSettings();
     }
 
-    public Skill(string name, string description)
+    private void InitializeWithSettings()
     {
-        Name = name;
-        Description = description;
-        Cost = 0;
+        if (Name.Contains("Base"))
+        {
+            IsLearned = true;
+        }
     }
 
-    public Skill(string name, string description, int cost)
+    public void AddPrerequisite(Skill skill)
     {
-        Name = name;
-        Description = description;
-        Cost = cost;
+        Prerequisites?.Add(skill);
     }
 
-    public abstract void Accept(ISkillVisitor visitor);
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        if (OnSkillSelected != null) OnSkillSelected(this, EventArgs.Empty);
+    }
 }

@@ -6,7 +6,7 @@ using TMPro;
 public class UICustomRolloverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private SVGImage _ellipseImage;
-    [SerializeField] private Color _ellipseColor;
+    [SerializeField, ColorUsage(true)] private Color _ellipseColor;
     private Color _previousEllipseColor;
 
     [SerializeField] private SVGImage _costIndicatorImage;
@@ -15,7 +15,7 @@ public class UICustomRolloverEffect : MonoBehaviour, IPointerEnterHandler, IPoin
     private void Awake()
     {
         _previousEllipseColor = _ellipseImage.color;
-        _ellipseColor.a = 255f;
+        //_ellipseColor.a = 255f;
 
         _costIndicatorImage.CrossFadeAlpha(0.0f, 0f, true);
         _costIndicatorText.CrossFadeAlpha(0.0f, 0f, true);
