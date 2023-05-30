@@ -66,4 +66,10 @@ public class ScoreBarFade : MonoBehaviour
         _barImage.fillAmount = healthNormalized;
         _scoreText.text = _player.Score.Amount.ToString();
     }
+
+    private void OnDestroy()
+    {
+        _player.Score.OnSpent -= ScoreSystem_OnSpent;
+        _player.Score.OnEarned -= ScoreSystem_OnEarned;
+    }
 }

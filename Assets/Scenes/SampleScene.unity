@@ -1207,6 +1207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 10
   _cost: 10
+  EllipseColor: {r: 0, g: 0, b: 0, a: 0}
   CostIndicatorText: {fileID: 1254545534}
   SkillConnections:
   - {fileID: 1703355805}
@@ -1376,6 +1377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 7
   _cost: 16
+  EllipseColor: {r: 0, g: 0, b: 0, a: 0}
   CostIndicatorText: {fileID: 1145305063}
   SkillConnections:
   - {fileID: 994897274}
@@ -1546,6 +1548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 5
   _cost: 12
+  EllipseColor: {r: 0, g: 0, b: 0, a: 0}
   CostIndicatorText: {fileID: 840505416}
   SkillConnections:
   - {fileID: 550846586}
@@ -3224,6 +3227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 6
   _cost: 14
+  EllipseColor: {r: 0, g: 0, b: 0, a: 0}
   CostIndicatorText: {fileID: 661873195}
   SkillConnections:
   - {fileID: 430989434}
@@ -4121,6 +4125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 3
   _cost: 9
+  EllipseColor: {r: 0, g: 0, b: 0, a: 0}
   CostIndicatorText: {fileID: 108312664}
   SkillConnections:
   - {fileID: 1279571824}
@@ -5224,6 +5229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Base
   _cost: 0
+  EllipseColor: {r: 0, g: 0, b: 0, a: 0}
   CostIndicatorText: {fileID: 982103453}
   SkillConnections: []
   Prerequisites: []
@@ -5823,6 +5829,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 8
   _cost: 10
+  EllipseColor: {r: 0, g: 0, b: 0, a: 0}
   CostIndicatorText: {fileID: 152870931}
   SkillConnections:
   - {fileID: 294344007}
@@ -6820,7 +6827,8 @@ MonoBehaviour:
   - {fileID: 1243054512}
   - {fileID: 1874574491}
   - {fileID: 228856737}
-  _skillConnections: []
+  LearnedSkillColor: {r: 0.7921569, g: 1, b: 0.7137255, a: 1}
+  UnlearnedSkillColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1485897223
 GameObject:
   m_ObjectHideFlags: 0
@@ -8158,6 +8166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 9
   _cost: 10
+  EllipseColor: {r: 0, g: 0, b: 0, a: 0}
   CostIndicatorText: {fileID: 843646564}
   SkillConnections:
   - {fileID: 972826853}
@@ -8528,6 +8537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 2
   _cost: 8
+  EllipseColor: {r: 0, g: 0, b: 0, a: 0}
   CostIndicatorText: {fileID: 1445156028}
   SkillConnections:
   - {fileID: 106223374}
@@ -9487,6 +9497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 4
   _cost: 10
+  EllipseColor: {r: 0, g: 0, b: 0, a: 0}
   CostIndicatorText: {fileID: 1882625855}
   SkillConnections:
   - {fileID: 989616042}
@@ -9654,6 +9665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 1
   _cost: 1
+  EllipseColor: {r: 0, g: 0, b: 0, a: 0}
   CostIndicatorText: {fileID: 673511399}
   SkillConnections:
   - {fileID: 1020420865}

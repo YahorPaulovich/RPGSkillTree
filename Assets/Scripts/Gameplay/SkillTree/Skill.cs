@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Unity.VectorGraphics;
 using TMPro;
 
 [RequireComponent(typeof(Button))]
+[RequireComponent(typeof(SVGImage))]
 public class Skill : MonoBehaviour, IPointerUpHandler
 {
     public string Name => _name;
@@ -14,6 +16,9 @@ public class Skill : MonoBehaviour, IPointerUpHandler
     [SerializeField] private int _cost = 0;
     public bool IsLearned { get; set; } = false;
     public bool IsSelected { get; set; } = false;
+    private SVGImage _ellipseImage;
+    [HideInInspector] public Color EllipseColor;
+    private Color _previousEllipseColor;
 
     public TMP_Text CostIndicatorText;
     public GameObject[] SkillConnections;
@@ -22,6 +27,11 @@ public class Skill : MonoBehaviour, IPointerUpHandler
 
     private void Awake()
     {
+        _ellipseImage = GetComponent<SVGImage>();
+        EllipseColor = _ellipseImage.color;
+        EllipseColor.a = 255f;
+        _previousEllipseColor = EllipseColor;
+
         if (CostIndicatorText)
         {
             CostIndicatorText.text = Cost.ToString() + " points";
@@ -46,5 +56,23 @@ public class Skill : MonoBehaviour, IPointerUpHandler
     public void OnPointerUp(PointerEventData eventData)
     {
         if (OnSkillSelected != null) OnSkillSelected(this, EventArgs.Empty);
+    }
+
+    public void SetColorToLearnedColor(Color learnedColor)
+    {
+        _ellipseImage.CrossFadeColor(learnedColor, 1f, true, false);
+        _ellipseImage.color = learnedColor;
+    }
+
+    public void SetColorToUnlearnedColor(Color unlearnedColor)
+    {
+        _ellipseImage.CrossFadeColor(unlearnedColor, 1f, true, false);
+        _ellipseImage.color = unlearnedColor;
+    }
+
+    public void SetColorToUnlearnedColor()
+    {
+        _ellipseImage.CrossFadeColor(_previousEllipseColor, 1f, true, false);
+        _ellipseImage.color = _previousEllipseColor;
     }
 }

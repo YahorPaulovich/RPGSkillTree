@@ -3,11 +3,13 @@ using UnityEngine.EventSystems;
 using Unity.VectorGraphics;
 using TMPro;
 
-public class UICustomRolloverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+[RequireComponent(typeof(Skill))]
+public class UISkillRolloverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private SVGImage _ellipseImage;
     [SerializeField, ColorUsage(true, true)] private Color _ellipseColor;
     private Color _previousEllipseColor;
+    private Color _currentEllipseColor;
 
     [SerializeField] private SVGImage _costIndicatorImage;
     [SerializeField] private TMP_Text _costIndicatorText;
@@ -28,7 +30,8 @@ public class UICustomRolloverEffect : MonoBehaviour, IPointerEnterHandler, IPoin
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        ExitAnimation();
+        //ExitAnimation();
+        ExitAnimationWithLearnedColor();
     }
 
     private void HoverAnimation()
@@ -41,6 +44,14 @@ public class UICustomRolloverEffect : MonoBehaviour, IPointerEnterHandler, IPoin
     private void ExitAnimation()
     {
         _ellipseImage.CrossFadeColor(_previousEllipseColor, 1f, true, false);
+        _costIndicatorImage.CrossFadeAlpha(0.0f, 0.5f, true);
+        _costIndicatorText.CrossFadeAlpha(0.0f, 0.5f, true);
+    }
+
+    private void ExitAnimationWithLearnedColor()
+    {
+        _currentEllipseColor = GetComponent<Skill>().EllipseColor;
+        _ellipseImage.CrossFadeColor(_currentEllipseColor, 1f, true, false);
         _costIndicatorImage.CrossFadeAlpha(0.0f, 0.5f, true);
         _costIndicatorText.CrossFadeAlpha(0.0f, 0.5f, true);
     }

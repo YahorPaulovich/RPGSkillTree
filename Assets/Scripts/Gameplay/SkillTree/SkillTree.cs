@@ -1,27 +1,32 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SkillTree : MonoBehaviour
 {
     [HideInInspector] public List<Skill> Skills => _skills;
     [SerializeField] private List<Skill> _skills;
     private List<Skill> _learnedSkills;
-    [SerializeField] private List<GameObject> _skillConnections;
     public Skill CurrentSelectedSkill { get; set; }
     private Skill _previousSelectedSkill { get; set; }
+
+    [ColorUsage(true, true)] public Color LearnedSkillColor;
+    [ColorUsage(true, true)] public Color UnlearnedSkillColor;
 
     public event EventHandler OnSkillLearned;
     public event EventHandler OnSkillForgotten;
     public event EventHandler OnSkillSelected;
+    public event EventHandler OnSkillDeselected;
 
     private void Awake()
     {      
-        if (_skills == null || _skillConnections == null)
+        if (_skills == null)
         {
             throw new NullReferenceException();
         }
+        LearnedSkillColor.a = 255f;
+        UnlearnedSkillColor.a = 255f;
+
         _learnedSkills = new List<Skill>();
         foreach (var skill in _skills)
         {
@@ -48,10 +53,20 @@ public class SkillTree : MonoBehaviour
         }
 
         CurrentSelectedSkill = (Skill)sender;
-        CurrentSelectedSkill.IsSelected = true;
-        
-        _previousSelectedSkill = CurrentSelectedSkill;
-        if (OnSkillSelected != null) OnSkillSelected(this, EventArgs.Empty);
+
+        if (CanLearnSkill(CurrentSelectedSkill))
+        {
+            CurrentSelectedSkill.IsSelected = true;
+            _previousSelectedSkill = CurrentSelectedSkill;
+
+            if (OnSkillSelected != null) OnSkillSelected(this, EventArgs.Empty);
+        }
+        else
+        {
+            CurrentSelectedSkill.IsSelected = false;
+
+            if (OnSkillDeselected != null) OnSkillDeselected(this, EventArgs.Empty);
+        }      
     }
 
     public void AddSkill(Skill skill)
@@ -59,24 +74,22 @@ public class SkillTree : MonoBehaviour
         _skills?.Add(skill);
     }
 
-    public void LearnSkill(Skill skill)
+    public bool LearnSkill(Skill skill)
     {
         if (CanLearnSkill(skill))
         {
             skill.IsLearned = true;
             _learnedSkills.Add(skill);
-            foreach (var connection in skill.SkillConnections)
-            {
-                connection.SetActive(true);
-            }
-            skill.gameObject.GetComponent<Button>().interactable = true;
             Debug.Log("Learned skill: " + skill.Name);
             if (OnSkillLearned != null) OnSkillLearned(this, EventArgs.Empty);
+
+            return true;
         }
         else
         {
             Debug.Log("Cannot learn skill: " + skill.Name);
         }
+        return false;
     }
 
     private bool CanLearnSkill(Skill skill)
@@ -92,24 +105,21 @@ public class SkillTree : MonoBehaviour
         return true;
     }
 
-    public void ForgetSkill(Skill skill)
+    public bool ForgetSkill(Skill skill)
     {
         if (CanForgetSkill(skill))
         {
             skill.IsLearned = false;
             _learnedSkills.Remove(skill);
-            foreach (var connection in skill.SkillConnections)
-            {
-                connection.SetActive(false);
-            }
-            skill.gameObject.GetComponent<Button>().interactable = false;
             Debug.Log("Forgot skill: " + skill.Name);
             if (OnSkillForgotten != null) OnSkillForgotten(this, EventArgs.Empty);
+            return true;
         }
         else
         {
             Debug.Log("Cannot forget skill: " + skill.Name);
         }
+        return false;
     }
 
     public bool CanForgetSkill(Skill skill)
@@ -160,5 +170,13 @@ public class SkillTree : MonoBehaviour
             }
         }
         return allSkillsThatCanBeLearned;
+    }
+
+    private void OnDestroy()
+    {
+        foreach (var skill in _skills)
+        {
+            skill.OnSkillSelected -= Skill_OnSkillSelected;
+        }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+//using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,11 @@ public class Player : MonoBehaviour
     [SerializeField] private int _initialPointsAmount = 0;
     public ScoreSystem Score { get; private set; }
     [SerializeField] private SkillTree _skillTree;
+    //public List<Skill> LearnedSkills { get; set; }
     private PlayerControls _playerControls;
+
+    private Color _learnedSkillColor;
+    private Color _unlearnedSkillColor;
 
     private void Awake()
     {
@@ -16,26 +21,58 @@ public class Player : MonoBehaviour
         {
             throw new NullReferenceException();
         }
+        else
+        {
+            _learnedSkillColor = _skillTree.LearnedSkillColor;
+            _unlearnedSkillColor = _skillTree.UnlearnedSkillColor;
+        }
         _playerControls = GetComponent<PlayerControls>();
-        Score = new ScoreSystem(_initialPointsAmount);   
+        Score = new ScoreSystem(_initialPointsAmount);
     }
 
     private void Start()
     {
         TryToMakeSkillsActive();
+        _skillTree.OnSkillSelected += SkillTree_OnSkillSelected;
+        _skillTree.OnSkillDeselected += SkillTree_OnSkillDeselected;
         Score.OnScoreChanged += ScoreSystem_OnScoreChanged;
-        _skillTree.OnSkillSelected += _skillTree_OnSkillSelected;
+        _skillTree.OnSkillLearned += SkillTree_OnSkillLearned;
+        _skillTree.OnSkillForgotten += SkillTree_OnSkillForgotten;
     }
 
-    private void _skillTree_OnSkillSelected(object sender, EventArgs e)
+    private void SkillTree_OnSkillSelected(object sender, EventArgs e)
     {
         _playerControls.LearnButton.interactable = true;
         _playerControls.ForgetButton.interactable = true;
     }
 
+    private void SkillTree_OnSkillDeselected(object sender, EventArgs e)
+    {
+        _playerControls.LearnButton.interactable = false;
+        _playerControls.ForgetButton.interactable = false;
+    }
+
     private void ScoreSystem_OnScoreChanged(object sender, EventArgs e)
     {
         TryToMakeSkillsActive();
+    }
+
+    private void SkillTree_OnSkillLearned(object sender, EventArgs e)
+    {
+        _skillTree.CurrentSelectedSkill.SetColorToLearnedColor(_learnedSkillColor);
+        foreach (var connection in _skillTree.CurrentSelectedSkill.SkillConnections)
+        {
+            connection.SetActive(true);
+        }
+    }
+
+    private void SkillTree_OnSkillForgotten(object sender, EventArgs e)
+    {
+        _skillTree.CurrentSelectedSkill.SetColorToUnlearnedColor(_unlearnedSkillColor);
+        foreach (var connection in _skillTree.CurrentSelectedSkill.SkillConnections)
+        {
+            connection.SetActive(false);
+        }
     }
 
     private void TryToMakeSkillsActive()
@@ -87,8 +124,10 @@ public class Player : MonoBehaviour
     {
         if (Score.Amount >= skill.Cost)
         {
-            _skillTree?.LearnSkill(skill);
-            Score.Spend(skill.Cost);
+            if ((bool)(_skillTree?.LearnSkill(skill)))
+            {
+                Score.Spend(skill.Cost);
+            }       
         }
         else
         {
@@ -100,8 +139,10 @@ public class Player : MonoBehaviour
     {
         if (CanForgetSkill(skill))
         {
-            _skillTree?.ForgetSkill(skill);
-            Score.Earn(skill.Cost);
+            if ((bool)(_skillTree?.ForgetSkill(skill)))
+            {
+                Score.Earn(skill.Cost);
+            }       
         }
         else
         {
@@ -112,5 +153,14 @@ public class Player : MonoBehaviour
     private bool CanForgetSkill(Skill skill)
     {
         return _skillTree.CanForgetSkill(skill);
+    }
+
+    private void OnDestroy()
+    {
+        _skillTree.OnSkillSelected -= SkillTree_OnSkillSelected;
+        _skillTree.OnSkillDeselected -= SkillTree_OnSkillDeselected;
+        Score.OnScoreChanged -= ScoreSystem_OnScoreChanged;
+        _skillTree.OnSkillLearned -= SkillTree_OnSkillLearned;
+        _skillTree.OnSkillForgotten -= SkillTree_OnSkillForgotten;
     }
 }
