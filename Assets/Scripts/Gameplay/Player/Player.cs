@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
     {     
         _currentSelectedSkill = (Skill)sender;
 
-        if (CanLearnSkill(_currentSelectedSkill) && Score.Amount >= _currentSelectedSkill.Cost)
+        if (CanLearnSkill(_currentSelectedSkill) && Score.Amount >= _currentSelectedSkill.Cost && !_currentSelectedSkill.IsLearned)
         {
             if (_previousSelectedSkill)
             {
@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
             _playerControls.LearnButton.interactable = true;
             if (OnSkillSelected != null) OnSkillSelected(this, EventArgs.Empty);
         }
-        else if(CanForgetSkill(_currentSelectedSkill))
+        else if(CanForgetSkill(_currentSelectedSkill) && _currentSelectedSkill.IsLearned)
         {
             if (_previousSelectedSkill)
             {

@@ -7,6 +7,7 @@ public class SkillTree : MonoBehaviour
     [HideInInspector] public List<Skill> Skills => _skills;
     [SerializeField] private List<Skill> _skills;
     private List<Skill> _learnedSkills;
+    //private List<List<Skill>> _learnedSkillsGroups;
 
     [ColorUsage(true, true)] public Color LearnedSkillColor;
     [ColorUsage(true, true)] public Color UnlearnedSkillColor;
@@ -31,6 +32,25 @@ public class SkillTree : MonoBehaviour
                 _learnedSkills.Add(skill);
             }
         }
+
+        //_learnedSkillsGroups = new List<List<Skill>>
+        //{
+        //    new List<Skill>{ _skills[0], _skills[1] },
+        //    new List<Skill>{ _skills[0], _skills[2], _skills[3] },
+        //    new List<Skill>{ _skills[0], _skills[4], _skills[5], _skills[7] },
+        //    new List<Skill>{ _skills[0], _skills[4], _skills[6], _skills[7] },
+        //    new List<Skill>{ _skills[0], _skills[8], _skills[10] },
+        //    new List<Skill>{ _skills[0], _skills[9], _skills[10] }
+        //};
+
+        //foreach (var learnedSkillsGroup in _learnedSkillsGroups)
+        //{
+        //    foreach (var learnedSkill in learnedSkillsGroup)
+        //    {
+        //        Debug.Log(learnedSkill.Name);
+        //    }
+        //    Debug.Log("");
+        //}
     }
 
     public void AddSkill(Skill skill)
@@ -104,15 +124,7 @@ public class SkillTree : MonoBehaviour
 
         foreach (var learnedSkill in _learnedSkills)
         {
-            if (learnedSkill == skill && !HasLinkToBaseSkill(learnedSkill))
-            {
-                return false;
-            }
-        }
-
-        foreach (var learnedSkill in _learnedSkills)
-        {
-            if (learnedSkill != skill && !HasLinkToBaseSkill(learnedSkill) )
+            if (learnedSkill == skill && !HasLinkToBaseSkill(learnedSkill) )
             {
                 return false;
             }
