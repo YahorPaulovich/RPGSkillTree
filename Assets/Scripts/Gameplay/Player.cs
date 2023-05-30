@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     {
         if (_skillTree == null)
         {
-            Debug.LogError(new NullReferenceException().Message);
+            throw new NullReferenceException();
         }
         _playerControls = GetComponent<PlayerControls>();
         Score = new ScoreSystem(_initialPointsAmount);   

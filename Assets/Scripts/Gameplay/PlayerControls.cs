@@ -39,8 +39,6 @@ public class PlayerControls : MonoBehaviour
 
     private void OnLearnSelectedSkill()
     {
-        //skill.gameObject.GetComponent<Button>().interactable = true;
-        //_learnButton.interactable = false;
         _player.LearnSelectedSkill();
     }
 

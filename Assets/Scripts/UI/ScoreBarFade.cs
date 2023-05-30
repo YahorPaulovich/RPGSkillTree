@@ -17,13 +17,12 @@ public class ScoreBarFade : MonoBehaviour
     private void Awake()
     {
         _spentColor = _spentBarImage.color;
-       // _spentColor.a = 0f;
+        _spentColor.a = 0f;
         _spentBarImage.color = _spentColor;
     }
 
     private void Start()
     {
-        //_player.Score = new ScoreSystem(100);
         SetScore(_player.Score.GetScoreNormalized());
         _player.Score.OnSpent += ScoreSystem_OnSpent;
         _player.Score.OnEarned += ScoreSystem_OnEarned;
@@ -41,12 +40,6 @@ public class ScoreBarFade : MonoBehaviour
                 _spentBarImage.color = _spentColor;
             }
         }
-    }
-
-    private void OnDestroy()
-    {
-        _player.Score.OnSpent -= ScoreSystem_OnSpent;
-        _player.Score.OnEarned -= ScoreSystem_OnEarned;
     }
 
     private void ScoreSystem_OnEarned(object sender, System.EventArgs e)

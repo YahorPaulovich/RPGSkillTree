@@ -20,7 +20,7 @@ public class SkillTree : MonoBehaviour
     {      
         if (_skills == null || _skillConnections == null)
         {
-            Debug.LogError(new NullReferenceException().Message);
+            throw new NullReferenceException();
         }
         _learnedSkills = new List<Skill>();
         foreach (var skill in _skills)
