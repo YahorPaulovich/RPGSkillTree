@@ -7,16 +7,12 @@ public class SkillTree : MonoBehaviour
     [HideInInspector] public List<Skill> Skills => _skills;
     [SerializeField] private List<Skill> _skills;
     private List<Skill> _learnedSkills;
-    public Skill CurrentSelectedSkill { get; set; }
-    private Skill _previousSelectedSkill { get; set; }
 
     [ColorUsage(true, true)] public Color LearnedSkillColor;
     [ColorUsage(true, true)] public Color UnlearnedSkillColor;
 
     public event EventHandler OnSkillLearned;
     public event EventHandler OnSkillForgotten;
-    public event EventHandler OnSkillSelected;
-    public event EventHandler OnSkillDeselected;
 
     private void Awake()
     {      
@@ -35,38 +31,6 @@ public class SkillTree : MonoBehaviour
                 _learnedSkills.Add(skill);
             }
         }
-    }
-
-    private void Start()
-    {
-        foreach (var skill in _skills)
-        {
-            skill.OnSkillSelected += Skill_OnSkillSelected;
-        }
-    }
-
-    public void Skill_OnSkillSelected(object sender, EventArgs e)
-    {
-        if (_previousSelectedSkill)
-        {
-            _previousSelectedSkill.IsSelected = false;
-        }
-
-        CurrentSelectedSkill = (Skill)sender;
-
-        if (CanLearnSkill(CurrentSelectedSkill))
-        {
-            CurrentSelectedSkill.IsSelected = true;
-            _previousSelectedSkill = CurrentSelectedSkill;
-
-            if (OnSkillSelected != null) OnSkillSelected(this, EventArgs.Empty);
-        }
-        else
-        {
-            CurrentSelectedSkill.IsSelected = false;
-
-            if (OnSkillDeselected != null) OnSkillDeselected(this, EventArgs.Empty);
-        }      
     }
 
     public void AddSkill(Skill skill)
@@ -92,7 +56,7 @@ public class SkillTree : MonoBehaviour
         return false;
     }
 
-    private bool CanLearnSkill(Skill skill)
+    public bool CanLearnSkill(Skill skill)
     {
         foreach (var prerequisite in skill.Prerequisites)
         {
@@ -170,13 +134,5 @@ public class SkillTree : MonoBehaviour
             }
         }
         return allSkillsThatCanBeLearned;
-    }
-
-    private void OnDestroy()
-    {
-        foreach (var skill in _skills)
-        {
-            skill.OnSkillSelected -= Skill_OnSkillSelected;
-        }
     }
 }

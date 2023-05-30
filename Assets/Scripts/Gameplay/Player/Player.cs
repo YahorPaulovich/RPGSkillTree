@@ -11,6 +11,10 @@ public class Player : MonoBehaviour
     [SerializeField] private SkillTree _skillTree;
     //public List<Skill> LearnedSkills { get; set; }
     private PlayerControls _playerControls;
+    private Skill _currentSelectedSkill { get; set; }
+    private Skill _previousSelectedSkill { get; set; }
+    public event EventHandler OnSkillSelected;
+    public event EventHandler OnSkillDeselected;
 
     private Color _learnedSkillColor;
     private Color _unlearnedSkillColor;
@@ -33,17 +37,41 @@ public class Player : MonoBehaviour
     private void Start()
     {
         TryToMakeSkillsActive();
-        _skillTree.OnSkillSelected += SkillTree_OnSkillSelected;
-        _skillTree.OnSkillDeselected += SkillTree_OnSkillDeselected;
+        foreach (var skill in _skillTree.Skills)
+        {
+            skill.OnSkillSelected += Skill_OnSkillSelected;
+        }
+        OnSkillDeselected += SkillTree_OnSkillDeselected;
         Score.OnScoreChanged += ScoreSystem_OnScoreChanged;
         _skillTree.OnSkillLearned += SkillTree_OnSkillLearned;
         _skillTree.OnSkillForgotten += SkillTree_OnSkillForgotten;
     }
 
-    private void SkillTree_OnSkillSelected(object sender, EventArgs e)
+    private void Skill_OnSkillSelected(object sender, EventArgs e)
     {
-        _playerControls.LearnButton.interactable = true;
-        _playerControls.ForgetButton.interactable = true;
+        if (_previousSelectedSkill)
+        {
+            _previousSelectedSkill.IsSelected = false;
+        }
+
+        _currentSelectedSkill = (Skill)sender;
+
+        if ((CanLearnSkill(_currentSelectedSkill) && Score.Amount >= _currentSelectedSkill.Cost))
+        {
+            _currentSelectedSkill.IsSelected = true;
+            _previousSelectedSkill = _currentSelectedSkill;
+
+            _playerControls.LearnButton.interactable = true;
+            _playerControls.ForgetButton.interactable = true;
+
+            if (OnSkillSelected != null) OnSkillSelected(this, EventArgs.Empty);
+        }
+        else
+        {
+            _currentSelectedSkill.IsSelected = false;
+
+            if (OnSkillDeselected != null) OnSkillDeselected(this, EventArgs.Empty);
+        }
     }
 
     private void SkillTree_OnSkillDeselected(object sender, EventArgs e)
@@ -59,8 +87,8 @@ public class Player : MonoBehaviour
 
     private void SkillTree_OnSkillLearned(object sender, EventArgs e)
     {
-        _skillTree.CurrentSelectedSkill.SetColorToLearnedColor(_learnedSkillColor);
-        foreach (var connection in _skillTree.CurrentSelectedSkill.SkillConnections)
+        _currentSelectedSkill.SetColorToLearnedColor(_learnedSkillColor);
+        foreach (var connection in _currentSelectedSkill.SkillConnections)
         {
             connection.SetActive(true);
         }
@@ -68,8 +96,8 @@ public class Player : MonoBehaviour
 
     private void SkillTree_OnSkillForgotten(object sender, EventArgs e)
     {
-        _skillTree.CurrentSelectedSkill.SetColorToUnlearnedColor(_unlearnedSkillColor);
-        foreach (var connection in _skillTree.CurrentSelectedSkill.SkillConnections)
+        _currentSelectedSkill.SetColorToUnlearnedColor(_unlearnedSkillColor);
+        foreach (var connection in _currentSelectedSkill.SkillConnections)
         {
             connection.SetActive(false);
         }
@@ -98,17 +126,17 @@ public class Player : MonoBehaviour
 
     public void LearnSelectedSkill()
     {
-        if (_skillTree?.CurrentSelectedSkill)
+        if (_currentSelectedSkill)
         {
-            LearnSkill(_skillTree?.CurrentSelectedSkill);
+            LearnSkill(_currentSelectedSkill);
         }   
     }
 
     public void ForgetSelectedSkill()
     {
-        if (_skillTree?.CurrentSelectedSkill)
+        if (_currentSelectedSkill)
         {
-            ForgetSkill(_skillTree?.CurrentSelectedSkill);
+            ForgetSkill(_currentSelectedSkill);
         }    
     }
 
@@ -155,10 +183,18 @@ public class Player : MonoBehaviour
         return _skillTree.CanForgetSkill(skill);
     }
 
+    private bool CanLearnSkill(Skill skill)
+    {
+        return _skillTree.CanLearnSkill(skill);
+    }
+
     private void OnDestroy()
     {
-        _skillTree.OnSkillSelected -= SkillTree_OnSkillSelected;
-        _skillTree.OnSkillDeselected -= SkillTree_OnSkillDeselected;
+        foreach (var skill in _skillTree.Skills)
+        {
+            skill.OnSkillSelected -= Skill_OnSkillSelected;
+        }
+        OnSkillDeselected -= SkillTree_OnSkillDeselected;
         Score.OnScoreChanged -= ScoreSystem_OnScoreChanged;
         _skillTree.OnSkillLearned -= SkillTree_OnSkillLearned;
         _skillTree.OnSkillForgotten -= SkillTree_OnSkillForgotten;
