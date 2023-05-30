@@ -12,10 +12,14 @@ public class Skill : MonoBehaviour, IPointerUpHandler
 {
     public string Name => _name;
     [SerializeField] private string _name = "Unnamed Skill";
+
     public int Cost => _cost;
     [SerializeField] private int _cost = 0;
+
     public bool IsLearned { get; set; } = false;
+    public bool IsBaseSkill { get; private set; } = false;
     public bool IsSelected { get; set; } = false;
+
     private SVGImage _ellipseImage;
     [HideInInspector] public Color EllipseColor;
     private Color _previousEllipseColor;
@@ -23,6 +27,7 @@ public class Skill : MonoBehaviour, IPointerUpHandler
     public TMP_Text CostIndicatorText;
     public GameObject[] SkillConnections;
     public List<Skill> Prerequisites;
+
     public event EventHandler OnSkillSelected;
 
     private void Awake()
@@ -45,6 +50,7 @@ public class Skill : MonoBehaviour, IPointerUpHandler
         if (Name.Contains("Base"))
         {
             IsLearned = true;
+            IsBaseSkill = true;
         }
     }
 

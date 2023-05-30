@@ -7,7 +7,6 @@ public class SkillTree : MonoBehaviour
     [HideInInspector] public List<Skill> Skills => _skills;
     [SerializeField] private List<Skill> _skills;
     [HideInInspector] public List<Skill> LearnedSkills;
-    //private List<List<Skill>> _learnedSkillsGroups;
 
     [ColorUsage(true, true)] public Color LearnedSkillColor;
     [ColorUsage(true, true)] public Color UnlearnedSkillColor;
@@ -15,8 +14,10 @@ public class SkillTree : MonoBehaviour
     public event EventHandler OnSkillLearned;
     public event EventHandler OnSkillForgotten;
 
+    private Dictionary<Skill, List<Skill>> _skillTree;
+
     private void Awake()
-    {      
+    {
         if (_skills == null)
         {
             throw new NullReferenceException();
@@ -25,37 +26,27 @@ public class SkillTree : MonoBehaviour
         UnlearnedSkillColor.a = 255f;
 
         LearnedSkills = new List<Skill>();
+        _skillTree = new Dictionary<Skill, List<Skill>>();
+
         foreach (var skill in _skills)
         {
             if (skill.Name.Contains("Base"))
             {
                 LearnedSkills.Add(skill);
             }
+
+            _skillTree[skill] = new List<Skill>();
+            foreach (var prerequisite in skill.Prerequisites)
+            {
+                _skillTree[skill].Add(prerequisite);
+            }
         }
-
-        //_learnedSkillsGroups = new List<List<Skill>>
-        //{
-        //    new List<Skill>{ _skills[0], _skills[1] },
-        //    new List<Skill>{ _skills[0], _skills[2], _skills[3] },
-        //    new List<Skill>{ _skills[0], _skills[4], _skills[5], _skills[7] },
-        //    new List<Skill>{ _skills[0], _skills[4], _skills[6], _skills[7] },
-        //    new List<Skill>{ _skills[0], _skills[8], _skills[10] },
-        //    new List<Skill>{ _skills[0], _skills[9], _skills[10] }
-        //};
-
-        //foreach (var learnedSkillsGroup in _learnedSkillsGroups)
-        //{
-        //    foreach (var learnedSkill in learnedSkillsGroup)
-        //    {
-        //        Debug.Log(learnedSkill.Name);
-        //    }
-        //    Debug.Log("");
-        //}
     }
 
     public void AddSkill(Skill skill)
     {
         _skills?.Add(skill);
+        _skillTree[skill] = new List<Skill>();
     }
 
     public bool LearnSkill(Skill skill)
@@ -78,17 +69,23 @@ public class SkillTree : MonoBehaviour
 
     public bool CanLearnSkill(Skill skill)
     {
-        if (skill.Prerequisites.Count == 0)
+        if (_skillTree.ContainsKey(skill))
         {
-            return false;
-        }
-
-        foreach (var prerequisite in skill.Prerequisites)
-        {
-            if (prerequisite.IsLearned)
+            var prerequisites = _skillTree[skill];
+            if (prerequisites.Count == 0)
             {
                 return true;
             }
+
+            foreach (var prerequisite in prerequisites)
+            {
+                if (!prerequisite.IsLearned)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         return false;
@@ -98,6 +95,11 @@ public class SkillTree : MonoBehaviour
     {
         if (CanForgetSkill(skill))
         {
+            if (skill.IsBaseSkill)
+            {
+                return false;
+            }
+
             skill.IsLearned = false;
             LearnedSkills.Remove(skill);
             Debug.Log("Forgot skill: " + skill.Name);
@@ -111,26 +113,34 @@ public class SkillTree : MonoBehaviour
         return false;
     }
 
+
     public bool CanForgetSkill(Skill skill)
     {
-        if (skill.Prerequisites.Count == 0)
+        if (skill.IsBaseSkill)
         {
             return false;
         }
-        //if (skill.Name.Contains("Base"))
-        //{
-        //    return false;
-        //}
 
-        foreach (var learnedSkill in LearnedSkills)
+        if (_skillTree.ContainsKey(skill))
         {
-            if (learnedSkill == skill && !HasLinkToBaseSkill(learnedSkill) )
+            var prerequisites = _skillTree[skill];
+            if (prerequisites.Count == 0)
             {
-                return false;
+                return true;
             }
+
+            foreach (var learnedSkill in LearnedSkills)
+            {
+                if (learnedSkill == skill && !HasLinkToBaseSkill(learnedSkill))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
-        return true;
+        return false;
     }
 
 
@@ -141,11 +151,15 @@ public class SkillTree : MonoBehaviour
             return true;
         }
 
-        foreach (var prerequisite in skill.Prerequisites)
+        if (_skillTree.ContainsKey(skill))
         {
-            if (HasLinkToBaseSkill(prerequisite))
+            var prerequisites = _skillTree[skill];
+            foreach (var prerequisite in prerequisites)
             {
-                return true;
+                if (HasLinkToBaseSkill(prerequisite))
+                {
+                    return true;
+                }
             }
         }
 

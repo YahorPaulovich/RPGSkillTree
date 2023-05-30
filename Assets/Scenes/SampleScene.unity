@@ -1383,7 +1383,6 @@ MonoBehaviour:
   - {fileID: 994897274}
   - {fileID: 1881581113}
   Prerequisites:
-  - {fileID: 2081874928}
   - {fileID: 235707192}
   - {fileID: 586898204}
 --- !u!1 &235707185
@@ -4130,7 +4129,6 @@ MonoBehaviour:
   SkillConnections:
   - {fileID: 1279571824}
   Prerequisites:
-  - {fileID: 993614185}
   - {fileID: 1892572027}
 --- !u!1 &755180137
 GameObject:
@@ -6827,6 +6825,7 @@ MonoBehaviour:
   - {fileID: 1243054512}
   - {fileID: 1874574491}
   - {fileID: 228856737}
+  LearnedSkills: []
   LearnedSkillColor: {r: 0.7921569, g: 1, b: 0.7137255, a: 1}
   UnlearnedSkillColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1485897223
