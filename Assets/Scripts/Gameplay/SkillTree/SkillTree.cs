@@ -6,7 +6,7 @@ public class SkillTree : MonoBehaviour
 {
     [HideInInspector] public List<Skill> Skills => _skills;
     [SerializeField] private List<Skill> _skills;
-    private List<Skill> _learnedSkills;
+    [HideInInspector] public List<Skill> LearnedSkills;
     //private List<List<Skill>> _learnedSkillsGroups;
 
     [ColorUsage(true, true)] public Color LearnedSkillColor;
@@ -24,12 +24,12 @@ public class SkillTree : MonoBehaviour
         LearnedSkillColor.a = 255f;
         UnlearnedSkillColor.a = 255f;
 
-        _learnedSkills = new List<Skill>();
+        LearnedSkills = new List<Skill>();
         foreach (var skill in _skills)
         {
             if (skill.Name.Contains("Base"))
             {
-                _learnedSkills.Add(skill);
+                LearnedSkills.Add(skill);
             }
         }
 
@@ -63,7 +63,7 @@ public class SkillTree : MonoBehaviour
         if (CanLearnSkill(skill))
         {
             skill.IsLearned = true;
-            _learnedSkills.Add(skill);
+            LearnedSkills.Add(skill);
             Debug.Log("Learned skill: " + skill.Name);
             if (OnSkillLearned != null) OnSkillLearned(this, EventArgs.Empty);
 
@@ -99,7 +99,7 @@ public class SkillTree : MonoBehaviour
         if (CanForgetSkill(skill))
         {
             skill.IsLearned = false;
-            _learnedSkills.Remove(skill);
+            LearnedSkills.Remove(skill);
             Debug.Log("Forgot skill: " + skill.Name);
             if (OnSkillForgotten != null) OnSkillForgotten(this, EventArgs.Empty);
             return true;
@@ -122,7 +122,7 @@ public class SkillTree : MonoBehaviour
         //    return false;
         //}
 
-        foreach (var learnedSkill in _learnedSkills)
+        foreach (var learnedSkill in LearnedSkills)
         {
             if (learnedSkill == skill && !HasLinkToBaseSkill(learnedSkill) )
             {
