@@ -58,15 +58,20 @@ public class SkillTree : MonoBehaviour
 
     public bool CanLearnSkill(Skill skill)
     {
+        if (skill.Prerequisites.Count == 0)
+        {
+            return false;
+        }
+
         foreach (var prerequisite in skill.Prerequisites)
         {
-            if (!prerequisite.IsLearned)
+            if (prerequisite.IsLearned)
             {
-                return false;
+                return true;
             }
         }
 
-        return true;
+        return false;
     }
 
     public bool ForgetSkill(Skill skill)
@@ -88,14 +93,26 @@ public class SkillTree : MonoBehaviour
 
     public bool CanForgetSkill(Skill skill)
     {
-        if (skill == _skills[0])
+        if (skill.Prerequisites.Count == 0)
         {
             return false;
+        }
+        //if (skill.Name.Contains("Base"))
+        //{
+        //    return false;
+        //}
+
+        foreach (var learnedSkill in _learnedSkills)
+        {
+            if (learnedSkill == skill && !HasLinkToBaseSkill(learnedSkill))
+            {
+                return false;
+            }
         }
 
         foreach (var learnedSkill in _learnedSkills)
         {
-            if (learnedSkill != skill && !HasLinkToBaseSkill(learnedSkill))
+            if (learnedSkill != skill && !HasLinkToBaseSkill(learnedSkill) )
             {
                 return false;
             }
@@ -107,7 +124,7 @@ public class SkillTree : MonoBehaviour
 
     private bool HasLinkToBaseSkill(Skill skill)
     {
-        if (skill == _skills[0])
+        if (skill.Name.Contains("Base"))
         {
             return true;
         }

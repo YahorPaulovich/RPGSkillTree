@@ -11,8 +11,8 @@ public class Player : MonoBehaviour
     [SerializeField] private SkillTree _skillTree;
     //public List<Skill> LearnedSkills { get; set; }
     private PlayerControls _playerControls;
-    private Skill _currentSelectedSkill { get; set; }
-    private Skill _previousSelectedSkill { get; set; }
+    private Skill _currentSelectedSkill;
+    private Skill _previousSelectedSkill;
     public event EventHandler OnSkillSelected;
     public event EventHandler OnSkillDeselected;
 
@@ -48,22 +48,35 @@ public class Player : MonoBehaviour
     }
 
     private void Skill_OnSkillSelected(object sender, EventArgs e)
-    {
-        if (_previousSelectedSkill)
-        {
-            _previousSelectedSkill.IsSelected = false;
-        }
-
+    {     
         _currentSelectedSkill = (Skill)sender;
 
-        if ((CanLearnSkill(_currentSelectedSkill) && Score.Amount >= _currentSelectedSkill.Cost))
+        if (CanLearnSkill(_currentSelectedSkill) && Score.Amount >= _currentSelectedSkill.Cost)
         {
+            if (_previousSelectedSkill)
+            {
+                _previousSelectedSkill.IsSelected = false;
+            }
+
             _currentSelectedSkill.IsSelected = true;
             _previousSelectedSkill = _currentSelectedSkill;
+            if (OnSkillDeselected != null) OnSkillDeselected(this, EventArgs.Empty);
 
             _playerControls.LearnButton.interactable = true;
-            _playerControls.ForgetButton.interactable = true;
+            if (OnSkillSelected != null) OnSkillSelected(this, EventArgs.Empty);
+        }
+        else if(CanForgetSkill(_currentSelectedSkill))
+        {
+            if (_previousSelectedSkill)
+            {
+                _previousSelectedSkill.IsSelected = false;
+            }
 
+            _currentSelectedSkill.IsSelected = true;
+            _previousSelectedSkill = _currentSelectedSkill;
+            if (OnSkillDeselected != null) OnSkillDeselected(this, EventArgs.Empty);
+
+            _playerControls.ForgetButton.interactable = true;
             if (OnSkillSelected != null) OnSkillSelected(this, EventArgs.Empty);
         }
         else
@@ -128,7 +141,17 @@ public class Player : MonoBehaviour
     {
         if (_currentSelectedSkill)
         {
-            LearnSkill(_currentSelectedSkill);
+            if (Score.Amount >= _currentSelectedSkill.Cost)
+            {
+                if ((bool)(_skillTree?.LearnSkill(_currentSelectedSkill)))
+                {
+                    Score.Spend(_currentSelectedSkill.Cost);
+                }
+            }
+            else
+            {
+                Debug.Log("Player doesn't have enough points to learn skill: " + _currentSelectedSkill.Name);
+            }
         }   
     }
 
@@ -145,21 +168,6 @@ public class Player : MonoBehaviour
         foreach (var skill in _skillTree.Skills)
         {
             ForgetSkill(skill);
-        }
-    }
-
-    private void LearnSkill(Skill skill)
-    {
-        if (Score.Amount >= skill.Cost)
-        {
-            if ((bool)(_skillTree?.LearnSkill(skill)))
-            {
-                Score.Spend(skill.Cost);
-            }       
-        }
-        else
-        {
-            Debug.Log("Player doesn't have enough points to learn skill: " + skill.Name);
         }
     }
 
