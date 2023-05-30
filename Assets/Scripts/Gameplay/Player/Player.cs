@@ -47,6 +47,10 @@ public class Player : MonoBehaviour
             {
                 skill.gameObject.GetComponent<Button>().interactable = true;
             }
+            else if (skill.IsLearned == false)
+            {
+                skill.gameObject.GetComponent<Button>().interactable = false;
+            }
         }
     }
 
