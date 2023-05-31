@@ -146,7 +146,7 @@ public class SkillTree : MonoBehaviour
 
     private bool HasLinkToBaseSkill(Skill skill)
     {
-        if (skill.Name.Contains("Base"))
+        if (skill.IsBaseSkill)
         {
             return true;
         }
